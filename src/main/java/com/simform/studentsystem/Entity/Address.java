@@ -1,8 +1,12 @@
 package com.simform.studentsystem.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jdk.jfr.DataAmount;
 import lombok.Data;
+import org.w3c.dom.ls.LSInput;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +26,10 @@ public class Address {
 
   @Column(name = "state")
   String state;
+
+  @JsonIgnore
+  @ManyToMany(mappedBy = "address")
+  private List<Student> students;
 
 
 
