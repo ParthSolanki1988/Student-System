@@ -14,4 +14,8 @@ public class StudentService {
   public Student creatStudet(Student student) {
     return studentRepository.save(student);
   }
+
+  public void deleteStudent(Integer id) {
+    studentRepository.deleteById(id);
+  }
 }
